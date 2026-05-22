@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío: Simuladores Web Interactivos</title>
+    <link rel="stylesheet" href="./index.css/stilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>Desafío Técnico: Simuladores Interactivos</h1>
+    </header>
+
+    <main class="container">
+        
+        <section class="card">
+            <h2>Ejercicio 1: Simulador de Transferencia de Calor</h2>
+            <p class="description">Calcula la temperatura final de un objeto tras transcurrir un tiempo determinado dentro de una atmósfera a temperatura constante.</p>
+            
+            <div class="formula-display">
+                <strong>Fórmula:</strong> T = Ts + (T0-Ts)* e^(-k*t)
+            </div>
+            
+            <form id="form-calor">
+                <div class="form-group">
+                    <label for="t0">Temperatura inicial (T0):</label> <input type="number" id="t0" value="120" step="any" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ts">Temperatura del entorno (Ts):</label> <input type="number" id="ts" value="38" step="any" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="k">Constante (k):</label> <input type="number" id="k" value="0.45" step="any" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="t-tiempo">Tiempo en horas (t):</label> <input type="number" id="t-tiempo" value="3" step="any" min="0" required>
+                </div>
+                
+                <button type="button" id="btn-calor">Calcular Temperatura</button>
+            </form>
+
+            <div id="resultado-calor" class="result-box hidden"></div>
+        </section>
+
+        <section class="card">
+            <h2>Ejercicio 2: Calculador de Combinaciones Complejas</h2>
+            <p class="description">Calcula el total de combinaciones posibles para un sorteo de selección simultánea en dos grupos independientes.</p>
+            
+            <div class="formula-display">
+                <strong>Fórmula General:</strong> C(n,r) = n! / (r! * (n-r)!)
+            </div>
+            
+            <form id="form-combinaciones">
+                <h3>Grupo 1</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="n1">n1:</label> <input type="number" id="n1" value="59" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="r1">r1:</label> <input type="number" id="r1" value="5" min="0" required>
+                    </div>
+                </div>
+
+                <h3>Grupo 2</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="n2">n2:</label> <input type="number" id="n2" value="35" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="r2">r2:</label> <input type="number" id="r2" value="1" min="0" required>
+                    </div>
+                </div>
+                
+                <button type="button" id="btn-combinaciones">Calcular Combinaciones</button>
+            </form>
+
+            <div id="resultado-combinaciones" class="result-box hidden"></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
